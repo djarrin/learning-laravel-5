@@ -11,6 +11,12 @@
 |
 */
 
+
+Route::get('articles', 'ArticlesController@index');
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
