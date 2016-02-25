@@ -17,6 +17,12 @@
             {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
         </div>
 
+        <!--will force a format with first date parameter-->
+        <div class="form-group">
+            {!! Form::label('published_at', 'Publish On:') !!}
+            {!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
+        </div>
+
         <div class="form-group">
             {!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
         </div>
