@@ -26,5 +26,18 @@
         <div class="form-group">
             {!! Form::submit('Add Article', ['class' => 'btn btn-primary form-control']) !!}
         </div>
+
     {!! Form::close() !!}
+
+    {{--will list errors--}}
+    @if ($errors->any())
+        <ul class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+
+    @endif
+
+
 @stop
