@@ -10,7 +10,9 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
-        'published_at'
+        'published_at',
+        'user_id'  //temporary
+
     ];
 
     //is query builder, scope is important
@@ -23,4 +25,16 @@ class Article extends Model
     {
         $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
     }
+
+    /**
+     * An article is uwned by a user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+
+        return $this->belongsTo('App\User');
+    }
+
 }
